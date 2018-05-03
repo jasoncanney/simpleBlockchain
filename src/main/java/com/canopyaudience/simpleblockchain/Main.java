@@ -13,7 +13,6 @@ import java.util.Arrays;
  * @author Jason
  */
 public class Main {
-    
     /**
      *  Hash = Digital Signature
      * Each block will have:
@@ -26,21 +25,15 @@ public class Main {
     ArrayList<Block> blockchain = new ArrayList<>();
     
     public static void main(String[] args) {
-        /*
-        String[] list1 = {"a","b","c"};
-        String[] list2 = {"aa","b","c"};
         
-        System.out.println(Arrays.hashCode(list1));
-        System.out.println(Arrays.hashCode(list2));
-        */
-        
-        String[] genesisTransactions = {"Jason was sent 10000 bitcoins by John", "John received 2 bitcoins from Jason"};
+        String[] genesisTransactions = {"AdImpression:0", "AdID:0"};
         Block genesisBlock = new Block(1973, genesisTransactions);
         
-        String[] block2Transactions = {"Hi there second block", "Hi back second block"};
+        String[] block2Transactions = {"AdCreated:04/08/18", "AdID:8675310", "AdOwner:Ford"};
         Block block2 = new Block(genesisBlock.getBlockHash(), block2Transactions);
         
-        String[] block3Transactions = {"Hi there third block", "Hi back third block"};
+        String[] block3Transactions = {"AdImp:12312", "AdID:8675310", "AdOwner:Ford", 
+            "PlacementOwner:Canoe", "ImpressionURL:http://bitly.co/123"};
         Block block3 = new Block(block2.getBlockHash(), block3Transactions);
       
         // Genesis Block
